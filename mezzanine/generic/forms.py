@@ -92,19 +92,26 @@ class ThreadedCommentForm(CommentForm, Html5Mixin):
         Set some initial field values from cookies or the logged in
         user, and apply some HTML5 attributes to the fields if the
         ``FORMS_USE_HTML5`` setting is ``True``.
+
+        The default values that are filled in the CommentForm has been
+        changed such that preference is given to user values than
+        cookie values
         """
         kwargs.setdefault("initial", {})
         user = request.user
         for field in ThreadedCommentForm.cookie_fields:
             cookie_name = ThreadedCommentForm.cookie_prefix + field
-            value = request.COOKIES.get(cookie_name, "")
-            if not value and user.is_authenticated():
+            if user.is_authenticated():
                 if field == "name":
                     value = user.get_full_name()
-                    if not value and user.username != user.email:
+                    if not value:
                         value = user.username
                 elif field == "email":
                     value = user.email
+                else:
+                    value=""
+            else:
+                value = request.COOKIES.get(cookie_name, "")
             kwargs["initial"][field] = value
         super(ThreadedCommentForm, self).__init__(*args, **kwargs)
 
