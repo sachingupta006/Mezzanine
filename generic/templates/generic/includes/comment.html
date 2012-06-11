@@ -1,0 +1,69 @@
+{% load i18n mezzanine_tags avatar_tags comment_tags %}
+
+<ul class="unstyled">
+    {% for comment in comments_for_thread %}
+
+    <li id="comment-{{ comment.id }}"
+        {% if comment.by_author %}class="comment-author"{% endif %}>
+        {% editable comment.is_public comment.is_removed %}
+        {% if not comment.is_removed and comment.is_public %}
+
+        <strong>
+            {% avatar comment.user 30 %}
+            {{ comment.user_name }}
+        </strong>
+        <span class="timespan">{{ comment.submit_date|timesince }} {% trans "ago" %}</span>
+        <p>{{ comment.comment }}</p>
+
+        <a href="{{ request.path }}#comment-{{ comment.id }}">{% trans "Link" %}</a>
+
+        <!--
+            This is has been added to hide the form, from a non logged in user
+            The user will only be able to see the comment and not the comment form
+        -->
+        {% is request.user.is_authenticated %} 
+        /
+        <a href="#reply-{{ comment.id }}" class="reply">{% trans "Reply" %}</a>
+        <form class="reply-form" method="post" id="reply-{{ comment.id }}"
+            action="{{ comment_url }}#reply-{{ comment.id }}"
+            {% if replied_to != comment.id %}style="display:none;"{% endif %}>
+            {% if replied_to == comment.id %}
+            {% comment_form_for posted_comment_form %}
+            {% else %}
+            {% comment_form_for unposted_comment_form %}
+            {% endif %}
+            <input type="hidden" name="replied_to" value="{{ comment.id }}">
+            <input class="btn btn-primary btn-large" type="submit" value="{% trans "Reply" %}">
+        </form>
+        {% endif %}
+
+        {% else %}
+
+        {% if request.user.is_staff %}
+        <strong>
+            {% avatar comment.user 30 %}
+            {{ comment.user_name }}
+        </strong>
+        <span class="timespan">{{ comment.submit_date|timesince }} {% trans "ago" %}</span>
+        <p>{{ comment.comment }}</p>
+        {% endif %}
+
+        <p>
+            {% if comment.is_removed %}
+            {% trans "Comment deleted" %}
+            {% else %}
+            {% trans "Comment awaiting approval" %}
+            {% endif %}
+            <span class="timespan">{{ comment.submit_date|timesince }} {% trans "ago" %}</span>
+        </p>
+
+        {% endif %}
+        {% endeditable %}
+        {% comment_thread comment %}
+    </li>
+    {% endfor %}
+    {% if no_comments %}
+    <li>{% trans "There are currently no comments" %}</li>
+    {% endif %}
+</ul>
+

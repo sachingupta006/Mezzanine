@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Sebastián Ramírez Magrí <sebasmagri@gmail.com>, 2011, 2012.
+# Sergi Almacellas <pokoli@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mezzanine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-26 12:27-0430\n"
+"PO-Revision-Date: 2012-05-22 09:09+0000\n"
+"Last-Translator: Sergi Almacellas <pokoli@gmail.com>\n"
+"Language-Team: Spanish (Castilian) (http://www.transifex.net/projects/p/"
+"mezzanine/language/es/)\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: models.py:17 templates/blog/includes/filter_panel.html:30
+msgid "Categories"
+msgstr "Categorías"
+
+#: models.py:19
+#, fuzzy
+msgid "Allow comments"
+msgstr "1 comentario"
+
+#: models.py:21 templates/blog/blog_post_list.html:111
+msgid "Comments"
+msgstr "Comentarios"
+
+#: models.py:22
+msgid "Rating"
+msgstr "Puntuación"
+
+#: models.py:23
+msgid "Featured Image"
+msgstr "Imágen promocionada"
+
+#: models.py:27
+msgid "Blog post"
+msgstr "Entrada de blog"
+
+#: models.py:28
+msgid "Blog posts"
+msgstr "Entradas de blog"
+
+#: models.py:50
+msgid "Blog Category"
+msgstr "Categoría del Blog"
+
+#: models.py:51
+msgid "Blog Categories"
+msgstr "Categorías del blog"
+
+#: templates/admin/includes/quick_blog.html:18
+msgid "Quick Blog"
+msgstr "Publicación blog"
+
+#: templates/admin/includes/quick_blog.html:27
+msgid "Save Draft"
+msgstr "Guardar borrador"
+
+#: templates/blog/blog_post_detail.html:21
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/blog/blog_post_detail.html:34
+#: templates/blog/blog_post_list.html:74
+msgid "Posted by"
+msgstr "Publicado por"
+
+#: templates/blog/blog_post_detail.html:38
+#: templates/blog/blog_post_list.html:84
+msgid "ago"
+msgstr "atrás"
+
+#: templates/blog/blog_post_detail.html:42
+#: templates/blog/blog_post_list.html:115
+#, python-format
+msgid "1 comment"
+msgid_plural "%(comments_count)s comments"
+msgstr[0] "1 comentario"
+msgstr[1] "%(comments_count)s comentarios"
+
+#: templates/blog/blog_post_detail.html:58
+#: templates/blog/blog_post_list.html:98
+#: templates/blog/includes/filter_panel.html:41
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: templates/blog/blog_post_detail.html:69
+msgid "Share on Twitter"
+msgstr "Compartir en Twitter"
+
+#: templates/blog/blog_post_detail.html:70
+msgid "Share on Facebook"
+msgstr "Compartir en Facebook"
+
+#: templates/blog/blog_post_list.html:4 templates/blog/blog_post_list.html:22
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/blog/blog_post_list.html:31
+msgid "Tag:"
+msgstr "Etiqueta:"
+
+#: templates/blog/blog_post_list.html:33
+msgid "Category:"
+msgstr "Categoría:"
+
+#: templates/blog/blog_post_list.html:37
+msgid "Author:"
+msgstr "Autor:"
+
+#: templates/blog/blog_post_list.html:49
+msgid "Viewing posts tagged"
+msgstr "Ver los mensajes etiquetados"
+
+#: templates/blog/blog_post_list.html:51
+msgid "Viewing posts for the category"
+msgstr "Ver los mensajes de la categoría"
+
+#: templates/blog/blog_post_list.html:53
+msgid "Viewing posts from"
+msgstr "Ver los mensajes de"
+
+#: templates/blog/blog_post_list.html:56
+msgid "Viewing posts by"
+msgstr "Ver los mensajes por"
+
+#: templates/blog/blog_post_list.html:79
+msgid "in"
+msgstr "en"
+
+#: templates/blog/blog_post_list.html:106
+msgid "read more"
+msgstr "leer más"
+
+#: templates/blog/includes/filter_panel.html:5
+msgid "Recent Posts"
+msgstr "Mensajes recientes"
+
+#: templates/blog/includes/filter_panel.html:16
+msgid "Archive"
+msgstr "Archivo"
+
+#: templates/blog/includes/filter_panel.html:55
+msgid "Authors"
+msgstr "Autores"
+
+#: templates/blog/includes/filter_panel.html:65
+msgid "Feeds"
+msgstr "Canal Web"
+
+#: templates/blog/includes/filter_panel.html:66
+msgid "RSS"
+msgstr "RSS"
+
+#: templates/blog/includes/filter_panel.html:67
+msgid "Atom"
+msgstr "Atom"
