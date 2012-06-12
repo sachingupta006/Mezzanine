@@ -21,7 +21,7 @@
             This is has been added to hide the form, from a non logged in user
             The user will only be able to see the comment and not the comment form
         -->
-        {% is request.user.is_authenticated %} 
+        {% if request.user.is_authenticated %} 
         /
         <a href="#reply-{{ comment.id }}" class="reply">{% trans "Reply" %}</a>
         <form class="reply-form" method="post" id="reply-{{ comment.id }}"
